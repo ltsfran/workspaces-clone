@@ -34,8 +34,5 @@
     "eslint-plugin-react": "7.33.2",
     "husky": "8.0.3",
     "typescript": "5.2.2"
-  },
-  "engines": {
-    "node": ">=16.20.0"
   }
 }

@@ -1,7 +1,7 @@
-import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
+import '@/globals.css'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -12,12 +12,12 @@ const inter = Inter({
 const switzer = localFont({
   src: [
     {
-      path: './fonts/Switzer-Regular.woff2',
+      path: '../fonts/Switzer-Regular.woff2',
       weight: '400',
       style: 'normal'
     },
     {
-      path: './fonts/Switzer-Bold.woff2',
+      path: '../fonts/Switzer-Bold.woff2',
       weight: '700',
       style: 'normal'
     }
