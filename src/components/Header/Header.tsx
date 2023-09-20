@@ -3,14 +3,14 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import TwitterIcon from '@/app/assets/twitter.svg'
-import InstagramIcon from '@/app/assets/instagram.svg'
-import GithubIcon from '@/app/assets/github.svg'
-import MenuIcon from '@/app/assets/menu.svg'
-import { navLinks } from './header.constants'
-import HeaderSocialLink from './header-social-link'
+import TwitterIcon from '@/assets/twitter.svg'
+import InstagramIcon from '@/assets/instagram.svg'
+import GithubIcon from '@/assets/github.svg'
+import MenuIcon from '@/assets/menu.svg'
+import { navLinks } from './Header.constants'
+import HeaderSocialLink from './HeaderSocialLink'
 
-export default function Header () {
+const Header: React.FC = () => {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -74,3 +74,5 @@ export default function Header () {
     </header>
   )
 }
+
+export default Header

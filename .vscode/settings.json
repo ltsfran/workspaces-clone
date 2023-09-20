@@ -4,7 +4,9 @@
         "source.fixAll.eslint": true
     },
     "cSpell.words": [
+        "esnext",
         "instagram",
+        "signups",
         "svgr",
         "switzer",
         "tailwindcss"
