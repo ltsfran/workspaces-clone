@@ -9,6 +9,7 @@
         "signups",
         "svgr",
         "switzer",
-        "tailwindcss"
+        "tailwindcss",
+        "tanstack"
     ]
 }
