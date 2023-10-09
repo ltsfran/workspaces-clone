@@ -14,5 +14,10 @@ export default async function fetcher (
 ) {
   const updatedInit = setHeaders(init)
   const res = await fetch(input, updatedInit)
+
+  if (!res.ok) {
+    throw new Error('Network response was not ok.')
+  }
+
   return await res.json()
 }

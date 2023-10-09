@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import '@/globals.css'
+import TanstackProvider from '@/components/TanstackProvider'
+import Header from '@/components/Header'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -38,7 +40,14 @@ export default function RootLayout ({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${switzer.variable}`}>
-      <body>{children}</body>
+      <body>
+        <TanstackProvider>
+          <Header />
+          <main className="flex min-h-screen flex-col p-4 md:p-6">
+            {children}
+          </main>
+        </TanstackProvider>
+      </body>
     </html>
   )
 }
