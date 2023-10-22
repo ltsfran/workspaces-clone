@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Caveat } from 'next/font/google'
 import localFont from 'next/font/local'
 import '@/globals.css'
 import TanstackProvider from '@/components/TanstackProvider'
@@ -9,6 +9,12 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter'
+})
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-caveat'
 })
 
 const switzer = localFont({
@@ -39,11 +45,11 @@ export default function RootLayout ({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${switzer.variable}`}>
+    <html lang="en" className={`${inter.variable} ${caveat.variable} ${switzer.variable}`}>
       <body>
         <TanstackProvider>
           <Header />
-          <main className="flex min-h-screen flex-col p-4 md:p-6">
+          <main className="flex min-h-screen flex-col">
             {children}
           </main>
         </TanstackProvider>
