@@ -39,7 +39,7 @@ const Header: React.FC = () => {
                 <Link
                   key={index}
                   href={link.url}
-                  className={`border-r-[1px] h-full flex items-center px-4 text-sm ${pathname === link.url ? 'text-[#171717]' : 'text-[#737373] hover:text-[#404040] hover:bg-[#F5F5F5]'}`}
+                  className={`border-r-[1px] h-full flex items-center px-4 text-sm ${pathname === link.url ? 'text-[#171717]' : 'text-neutral-500 hover:text-[#404040] hover:bg-[#F5F5F5]'}`}
                 >
                   {link.name}
                 </Link>
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
             {navLinks.map((link, index) => (
               <li
                 key={index}
-                className={`rounded cursor-pointer hover:text-[#404040] hover:bg-[#F5F5F5] flex flex-wrap ${pathname === link.url ? 'text-[#171717] bg-[#FAFAFA]' : 'text-[#737373]'}`}
+                className={`rounded cursor-pointer hover:text-[#404040] hover:bg-[#F5F5F5] flex flex-wrap ${pathname === link.url ? 'text-[#171717] bg-[#FAFAFA]' : 'text-neutral-500'}`}
               >
                 {link.native ?? false
                   ? <Link href={link.url} className="p-2 w-full">{link.name}</Link>

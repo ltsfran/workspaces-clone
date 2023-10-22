@@ -15,6 +15,11 @@ const nextConfig = {
     })
     return config
   },
+  images: {
+    domains: [
+      'uploads-ssl.webflow.com',
+    ]
+  }
 }
 
 module.exports = nextConfig

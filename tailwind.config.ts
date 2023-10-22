@@ -15,7 +15,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)'],
-        switzer: ['var(--font-switzer)']
+        switzer: ['var(--font-switzer)'],
+        caveat: ['var(--font-caveat)']
       }
     }
   },
