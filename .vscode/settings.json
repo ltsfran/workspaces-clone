@@ -1,15 +1,16 @@
 {
-    "eslint.format.enable": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "cSpell.words": [
-        "esnext",
-        "instagram",
-        "signups",
-        "svgr",
-        "switzer",
-        "tailwindcss",
-        "tanstack"
-    ]
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "cSpell.words": [
+    "ecma",
+    "esnext",
+    "instagram",
+    "signups",
+    "svgr",
+    "switzer",
+    "tailwindcss",
+    "tanstack"
+  ]
 }
