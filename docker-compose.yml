@@ -26,6 +26,19 @@ services:
     volumes:
       - pgadmin-data:/var/lib/pgadmin
 
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: website
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: >
+      sh -c "pnpm install && pnpm dev"
+    ports:
+      - '3000:3000'
+
 volumes:
   postgres_data:
   pgadmin-data:
