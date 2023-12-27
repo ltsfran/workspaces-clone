@@ -1,12 +1,14 @@
 {
   "eslint.format.enable": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "cSpell.words": [
     "ecma",
     "esnext",
+    "hstore",
     "instagram",
+    "postgres",
     "signups",
     "svgr",
     "switzer",
