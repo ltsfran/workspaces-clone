@@ -19,6 +19,9 @@ const nextConfig = {
     domains: [
       'uploads-ssl.webflow.com',
     ]
+  },
+  experimental: {
+    serverComponentsExternalPackages: ['sequelize'],
   }
 }
 
