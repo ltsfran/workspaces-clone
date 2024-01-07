@@ -13,6 +13,8 @@
     "svgr",
     "switzer",
     "tailwindcss",
-    "tanstack"
+    "tanstack",
+    "vercel",
+    "Vercel"
   ]
 }
