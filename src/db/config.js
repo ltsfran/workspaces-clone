@@ -1,3 +1,7 @@
+const dotenv = require('dotenv')
+dotenv.config()
+dotenv.config({ path: '.env.local', override: true })
+
 module.exports = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
