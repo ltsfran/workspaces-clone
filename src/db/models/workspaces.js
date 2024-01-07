@@ -1,25 +1,22 @@
 import { DataTypes } from 'sequelize'
 import { sequelize } from '@/db/models'
-import { Workspaces } from '@/db/models/workspaces'
 
-export const Users = sequelize.define('users', {
-  user_id: {
+export const Workspaces = sequelize.define('workspaces', {
+  workspace_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false
   },
-  username: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  email: {
-    type: DataTypes.STRING,
-    unique: true,
-    allowNull: false
+  description: {
+    type: DataTypes.STRING
   },
-  password: {
-    type: DataTypes.STRING,
+  content: {
+    type: DataTypes.TEXT,
     allowNull: false
   },
   createdAt: {
@@ -31,8 +28,13 @@ export const Users = sequelize.define('users', {
     type: DataTypes.DATE,
     defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
     allowNull: false
+  },
+  admin_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'users',
+      key: 'user_id'
+    }
   }
 })
-
-Users.hasMany(Workspaces, { foreignKey: 'admin_id' })
-Workspaces.belongsTo(Users, { foreignKey: 'admin_id' })

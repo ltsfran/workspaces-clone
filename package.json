@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "db:migrations": "sequelize-cli db:migrate",
+    "dev": "pnpm run db:migrations && next dev",
+    "build": "pnpm run db:migrations && next build",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
@@ -18,6 +19,7 @@
     "@types/react": "18.2.30",
     "@types/react-dom": "18.2.14",
     "autoprefixer": "10.4.16",
+    "dotenv": "16.3.1",
     "eslint-config-next": "13.5.6",
     "next": "13.5.6",
     "pg": "8.11.3",
@@ -26,6 +28,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sequelize": "6.35.1",
+    "sequelize-cli": "6.6.2",
     "sharp": "0.32.6",
     "tailwind-merge": "1.14.0",
     "tailwindcss": "3.3.3"
