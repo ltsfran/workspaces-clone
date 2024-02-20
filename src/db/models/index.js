@@ -8,12 +8,14 @@ const {
   password,
   host,
   dialect,
+  dialectModule,
   dialectOptions
 } = config[env]
 
 export const sequelize = new Sequelize(database, username, password, {
   host,
   dialect,
+  dialectModule,
   dialectOptions
 });
 
