@@ -4,6 +4,8 @@
     "source.fixAll.eslint": "explicit"
   },
   "cSpell.words": [
+    "cloudinary",
+    "clsx",
     "ecma",
     "esnext",
     "hstore",

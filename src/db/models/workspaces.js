@@ -19,6 +19,14 @@ export const Workspaces = sequelize.define('workspaces', {
     type: DataTypes.TEXT,
     allowNull: false
   },
+  url_image: {
+    type: DataTypes.TEXT,
+    allowNull: true
+  },
+  slug: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
   createdAt: {
     type: DataTypes.DATE,
     defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),

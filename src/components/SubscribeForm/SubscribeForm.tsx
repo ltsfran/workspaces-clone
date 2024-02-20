@@ -1,5 +1,5 @@
 'use client'
-import useSubscribe from './useSubscribe.hook'
+import useSubscribe from './use-subscribe.hook'
 
 const SubscribeForm: React.FC = () => {
   const {
