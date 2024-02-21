@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { cn } from '@/utils'
 import TwitterIcon from '@/assets/twitter.svg'
 import InstagramIcon from '@/assets/instagram.svg'
 import GithubIcon from '@/assets/github.svg'
@@ -23,10 +24,11 @@ const Header: React.FC = () => {
       <div className="w-full max-w-screen-xl mx-auto relative">
         <div className="w-full px-4 py-3 box-border flex flex-wrap justify-between items-center relative z-20 bg-[#FAFAFA] md:py-0 md:grid md:grid-cols-3">
           <div className="flex">
-            <Link href="/" className="inline-flex flex-wrap">
+            <Link href="/" title="Logo" className="inline-flex flex-wrap">
               <Image
                 src="/logo-nav.png"
-                alt="logo"
+                alt="Logo"
+                title="Logo"
                 width={40}
                 height={40}
               />
@@ -39,16 +41,20 @@ const Header: React.FC = () => {
                 <Link
                   key={index}
                   href={link.url}
-                  className={`border-r-[1px] h-full flex items-center px-4 text-sm ${pathname === link.url ? 'text-[#171717]' : 'text-neutral-500 hover:text-[#404040] hover:bg-[#F5F5F5]'}`}
+                  title={link.name}
+                  className={cn('border-r-[1px] h-full flex items-center px-4 text-sm', {
+                    'text-[#171717]': pathname === link.url,
+                    'text-neutral-500 hover:text-[#404040] hover:bg-[#F5F5F5]': pathname !== link.url
+                  })}
                 >
                   {link.name}
                 </Link>
               ))}
           </nav>
           <div className="hidden text-2xl gap-6 md:flex md:justify-self-end">
-            <HeaderSocialLink url="https://twitter.com/workspacesxyz" icon={<TwitterIcon />} />
-            <HeaderSocialLink url="https://www.instagram.com/workspacesxyz" icon={<InstagramIcon />} />
-            <HeaderSocialLink url="https://github.com/ltsfran/workspaces-clone" icon={<GithubIcon />} />
+            <HeaderSocialLink title="Twitter" url="https://twitter.com/workspacesxyz" icon={<TwitterIcon />} />
+            <HeaderSocialLink title="Instagram" url="https://www.instagram.com/workspacesxyz" icon={<InstagramIcon />} />
+            <HeaderSocialLink title="Github" url="https://github.com/ltsfran/workspaces-clone" icon={<GithubIcon />} />
           </div>
           <div
             onClick={handleClick}
@@ -62,11 +68,14 @@ const Header: React.FC = () => {
               <li
                 key={index}
                 onClick={handleClick}
-                className={`rounded cursor-pointer hover:text-[#404040] hover:bg-[#F5F5F5] flex flex-wrap ${pathname === link.url ? 'text-[#171717] bg-[#FAFAFA]' : 'text-neutral-500'}`}
+                className={cn('rounded cursor-pointer hover:text-[#404040] hover:bg-[#F5F5F5] flex flex-wrap', {
+                  'text-[#171717] bg-[#FAFAFA]': pathname === link.url,
+                  'text-neutral-500': pathname !== link.url
+                })}
               >
                 {link.native ?? false
-                  ? <Link href={link.url} className="p-2 w-full">{link.name}</Link>
-                  : <a href={link.url} className="p-2 w-full">{link.name}</a>}
+                  ? <Link href={link.url} title={link.name} className="p-2 w-full">{link.name}</Link>
+                  : <a href={link.url} title={link.name} className="p-2 w-full">{link.name}</a>}
               </li>
             ))}
           </ul>
