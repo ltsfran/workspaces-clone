@@ -19,7 +19,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className="w-full border-b-[1px] border-b-[#e5e5e5] relative">
+    <header className="w-full border-b-[1px] border-b-[#e5e5e5] relative bg-[#FAFAFA]">
       <div className="w-full max-w-screen-xl mx-auto relative">
         <div className="w-full px-4 py-3 box-border flex flex-wrap justify-between items-center relative z-20 bg-[#FAFAFA] md:py-0 md:grid md:grid-cols-3">
           <div className="flex">
@@ -61,6 +61,7 @@ const Header: React.FC = () => {
             {navLinks.map((link, index) => (
               <li
                 key={index}
+                onClick={handleClick}
                 className={`rounded cursor-pointer hover:text-[#404040] hover:bg-[#F5F5F5] flex flex-wrap ${pathname === link.url ? 'text-[#171717] bg-[#FAFAFA]' : 'text-neutral-500'}`}
               >
                 {link.native ?? false

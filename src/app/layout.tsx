@@ -46,10 +46,10 @@ export default function RootLayout ({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${caveat.variable} ${switzer.variable}`}>
-      <body>
+      <body className="flex flex-col w-full min-h-screen">
         <TanstackProvider>
           <Header />
-          <main className="flex min-h-screen flex-col">
+          <main className="flex-1 relative bg-[#FAFAFA]">
             {children}
           </main>
         </TanstackProvider>
