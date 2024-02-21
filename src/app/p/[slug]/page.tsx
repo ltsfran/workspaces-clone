@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 import { Workspaces } from '@/db/models/workspaces'
+import MarkdownContent from '@/components/MarkdownContent'
 
 export default async function Detail ({ params }: { params: { slug: string } }) {
   const getWorkspaceDetailBySlug = async (slug: string) => {
@@ -21,14 +22,12 @@ export default async function Detail ({ params }: { params: { slug: string } }) 
   const workspaceDetail = await getWorkspaceDetailBySlug(params.slug)
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 pt-8 box-border">
+    <div className="w-full max-w-4xl mx-auto px-4 pt-8 box-border">
       <div className="flex flex-wrap gap-4">
         <h1 className="w-full text-4xl">{workspaceDetail.title}</h1>
-        <h2 className="w-full text-xl text-[#404040]">{workspaceDetail.description}</h2>
+        <h2 className="w-full text-xl text-[#404040] mb-6">{workspaceDetail.description}</h2>
       </div>
-      <div className="text-[#404040]">
-        <p>{workspaceDetail.content}</p>
-      </div>
+      <MarkdownContent content={workspaceDetail.content} />
     </div>
   )
 }

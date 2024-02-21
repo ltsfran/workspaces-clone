@@ -33,7 +33,8 @@ export default async function Home () {
         <div className="w-full flex flex-wrap justify-center mb-4">
           <Image
             src="/logo-sticker.png"
-            alt="sticker"
+            alt="Logo Sticker"
+            title="Logo Sticker"
             width={52}
             height={52} />
         </div>
