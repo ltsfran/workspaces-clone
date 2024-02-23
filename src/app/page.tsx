@@ -11,7 +11,7 @@ const getTransformRotateClassNameByIndex: Record<number, string> = {
 
 export const dynamic = 'force-dynamic'
 
-export default async function Home () {
+export default async function HomePage () {
   const getWorkspaces = async () => {
     const workspaces = await Workspaces.findAll()
     const workspacesData = workspaces.map(workspace => workspace.get({ plain: true }))

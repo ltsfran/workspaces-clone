@@ -2,7 +2,11 @@ import { redirect } from 'next/navigation'
 import { Workspaces } from '@/db/models/workspaces'
 import MarkdownContent from '@/components/MarkdownContent'
 
-export default async function Detail ({ params }: { params: { slug: string } }) {
+interface DetailPageProps {
+  params: { slug: string }
+}
+
+export default async function DetailPage ({ params }: DetailPageProps) {
   const getWorkspaceDetailBySlug = async (slug: string) => {
     const workspaceId = slug.split('-').at(0)
     const workspace = await Workspaces.findOne({ where: { workspace_id: workspaceId } })

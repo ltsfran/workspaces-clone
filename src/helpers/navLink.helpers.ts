@@ -1,4 +1,4 @@
-export const navLinks = [
+export const getNavLinks = () => ([
   {
     name: 'Spaces',
     url: '/',
@@ -24,4 +24,4 @@ export const navLinks = [
     url: 'https://github.com/ltsfran/workspaces-clone',
     native: false
   }
-]
+])

@@ -8,11 +8,13 @@ import TwitterIcon from '@/assets/twitter.svg'
 import InstagramIcon from '@/assets/instagram.svg'
 import GithubIcon from '@/assets/github.svg'
 import MenuIcon from '@/assets/menu.svg'
-import { navLinks } from './Header.constants'
-import HeaderSocialLink from './HeaderSocialLink'
+import { getNavLinks } from '@/helpers/navLink.helpers'
+import SocialMediaLink from '@/components/SocialMediaLink'
 
 const Header: React.FC = () => {
   const pathname = usePathname()
+
+  const navLinks = getNavLinks()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleClick = () => {
@@ -22,7 +24,7 @@ const Header: React.FC = () => {
   return (
     <header className="w-full border-b-[1px] border-b-[#e5e5e5] relative bg-[#FAFAFA]">
       <div className="w-full max-w-screen-xl mx-auto relative">
-        <div className="w-full px-4 py-3 box-border flex flex-wrap justify-between items-center relative z-20 bg-[#FAFAFA] md:py-0 md:grid md:grid-cols-3">
+        <div className="w-full px-4 py-3 box-border flex flex-wrap justify-between items-center relative z-20 bg-[#FAFAFA] md:px-6 md:py-0 md:grid md:grid-cols-3">
           <div className="flex">
             <Link href="/" title="Logo" className="inline-flex flex-wrap">
               <Image
@@ -52,9 +54,9 @@ const Header: React.FC = () => {
               ))}
           </nav>
           <div className="hidden text-2xl gap-6 md:flex md:justify-self-end">
-            <HeaderSocialLink title="Twitter" url="https://twitter.com/workspacesxyz" icon={<TwitterIcon />} />
-            <HeaderSocialLink title="Instagram" url="https://www.instagram.com/workspacesxyz" icon={<InstagramIcon />} />
-            <HeaderSocialLink title="Github" url="https://github.com/ltsfran/workspaces-clone" icon={<GithubIcon />} />
+            <SocialMediaLink title="Twitter" url="https://twitter.com/workspacesxyz" icon={<TwitterIcon />} />
+            <SocialMediaLink title="Instagram" url="https://www.instagram.com/workspacesxyz" icon={<InstagramIcon />} />
+            <SocialMediaLink title="Github" url="https://github.com/ltsfran/workspaces-clone" icon={<GithubIcon />} />
           </div>
           <div
             onClick={handleClick}
@@ -62,7 +64,12 @@ const Header: React.FC = () => {
             <MenuIcon />
           </div>
         </div>
-        <div className={`absolute z-10 w-full p-3 transition duration-300 md:hidden ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div
+          className={cn('absolute z-10 w-full p-3 transition duration-300 md:hidden', {
+            'translate-y-0': isMenuOpen,
+            '-translate-y-full': !isMenuOpen
+          })}
+        >
           <ul className="p-2 box-border bg-white border border-[#e5e5e5] rounded-lg w-full">
             {navLinks.map((link, index) => (
               <li

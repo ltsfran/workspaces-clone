@@ -4,6 +4,7 @@ import localFont from 'next/font/local'
 import '@/globals.css'
 import TanstackProvider from '@/components/TanstackProvider'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -52,6 +53,7 @@ export default function RootLayout ({
           <main className="flex-1 relative bg-[#FAFAFA]">
             {children}
           </main>
+          <Footer />
         </TanstackProvider>
       </body>
     </html>

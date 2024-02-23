@@ -19,7 +19,7 @@ const SubscribeForm: React.FC = () => {
       {showForm && (
         <form
           onSubmit={onFormSubmit}
-          className="flex justify-center items-center gap-2.5"
+          className="w-full flex justify-center items-center gap-2.5"
         >
           <input
             type="email"
