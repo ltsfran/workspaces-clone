@@ -45,4 +45,12 @@ export const Workspaces = sequelize.define('workspaces', {
       key: 'user_id'
     }
   }
+},
+{
+  hooks: {
+    afterCreate: async (workspace) => {
+      await workspace
+        .update({ slug: `/p/${workspace.workspace_id}-${workspace.title.replace(/\s+/g, '-').toLowerCase()}` })
+    }
+  }
 })
