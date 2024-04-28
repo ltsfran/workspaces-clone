@@ -16,12 +16,14 @@ export default async function HomePage () {
     const workspaces = await Workspaces.findAll()
     const workspacesData = workspaces.map(workspace => workspace.get({ plain: true }))
 
-    return workspacesData.map(workspace => ({
-      title: workspace.title,
-      description: workspace.description,
-      image: workspace.url_image,
-      slug: workspace.slug ?? ''
-    }))
+    return workspacesData
+      .map(workspace => ({
+        title: workspace.title,
+        description: workspace.description,
+        image: workspace.url_image,
+        slug: workspace.slug ?? ''
+      }))
+      .filter((_, index) => index < 3)
   }
 
   const workspaces = await getWorkspaces()
